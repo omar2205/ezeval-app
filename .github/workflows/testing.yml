@@ -28,8 +28,6 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: "npm"
 
-      - name: check ENVs
-        run:  echo $PUBLIC_SUPABASE_URL
       - name: Print all ENVs
         run: printenv
         
