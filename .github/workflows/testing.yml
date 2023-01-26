@@ -32,7 +32,9 @@ jobs:
         run: printenv
         
       - name: Clean Install
-        run: npm ci
+        run: |
+             npm ci
+             npx playwright install
       - name: Playright Tests
         run: npm run test
       - name: Unit Tests
