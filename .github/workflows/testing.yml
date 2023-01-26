@@ -27,12 +27,12 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: "npm"
-          SECRET_ENV_MODE: ${{ secrets.SECRET_ENV_MODE }}
-          PUBLIC_SUPABASE_URL: ${{ secrets.PUBLIC_SUPABASE_URL }}
-          PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.PUBLIC_SUPABASE_ANON_KEY }}
 
       - name: check ENVs
         run:  echo $PUBLIC_SUPABASE_URL
+      - name: Print all ENVs
+        run: printenv
+        
       - name: Clean Install
         run: npm ci
       - name: Playright Tests
