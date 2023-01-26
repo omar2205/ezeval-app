@@ -30,7 +30,9 @@ jobs:
           PUBLIC_SUPABASE_URL: ${{ secrets.PUBLIC_SUPABASE_URL }}
           PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.PUBLIC_SUPABASE_ANON_KEY }}
       - name: Clean Install
-        run: npm ci
+        run: |
+          npm ci
+          echo $PUBLIC_SUPABASE_URL 
       - name: Playright Tests
         run: npm run test
       - name: Unit Tests
